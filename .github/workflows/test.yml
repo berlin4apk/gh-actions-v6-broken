@@ -1,0 +1,31 @@
+name: Test
+on: [push]
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  Test_and_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Python dependencies
+        run: pip install black flake8 dnspython
+
+      - name: Python Linters
+        uses: wearerequired/lint-action@v1
+        with:
+          black: true
+          flake8: true
+
+      - run: dig ns dnslabs.nl
+      - name: Run Python
+        run: python test.py
