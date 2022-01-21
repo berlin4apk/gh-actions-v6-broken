@@ -27,5 +27,7 @@ jobs:
           flake8: true
 
       - run: dig ns dnslabs.nl
+      - run: dig ns dnslabs.nl @8.8.8.8
+      - run: dig ns dnslabs.nl @1.1.1.1
       - name: Run Python
         run: python test.py
