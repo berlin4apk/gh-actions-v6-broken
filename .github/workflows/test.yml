@@ -10,18 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4.3.0
         with:
           python-version: 3.9
+      - run: python --version
 
       - name: Install Python dependencies
         run: pip install black flake8 dnspython
 
       - name: Python Linters
-        uses: wearerequired/lint-action@v1
+        uses: wearerequired/lint-action@v2.0.0
         with:
           black: true
           flake8: true
