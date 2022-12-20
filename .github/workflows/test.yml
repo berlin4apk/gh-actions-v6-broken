@@ -20,8 +20,8 @@ jobs:
           # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
       - run: python --version
 
-      - name: Install Python dependencies
-        run: pip install black flake8 dnspython
+      - name: Install Python dependencies form requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Python Linters
         uses: wearerequired/lint-action@v2.0.0
