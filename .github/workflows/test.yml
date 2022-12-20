@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-python@v4.3.0
         with:
           python-version: 3.9
+          cache: 'pip' # caching pip dependencies 
+          # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
       - run: python --version
 
       - name: Install Python dependencies
