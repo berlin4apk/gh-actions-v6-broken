@@ -21,7 +21,7 @@ jobs:
         run: pip install black flake8 dnspython
 
       - name: Python Linters
-        uses: wearerequired/lint-action@v1
+        uses: wearerequired/lint-action@v2
         with:
           black: true
           flake8: true
